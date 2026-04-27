@@ -1,4 +1,4 @@
-# Who Do They Cite? Gendered Citation Patterns in French Legislative Manifestos (1973–1993)
+# Gendered Citation Patterns in French Legislative Manifestos (1973–1993)
 
 Final project for M2 Machine Learning for NLP, ENSAE
 
