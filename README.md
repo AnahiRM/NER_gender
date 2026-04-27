@@ -1,18 +1,18 @@
 # Who Do They Cite? Gendered Citation Patterns in French Legislative Manifestos (1973–1993)
 
-Final project — M2 Machine Learning for NLP, École Polytechnique
+Final project for M2 Machine Learning for NLP, ENSAE
 
 ---
 
 ## Overview
 
-This project studies whether male and female candidates in French legislative elections cite political figures differently, with a focus on the **gender of cited persons**. Using a corpus of 20,331 manifestos from five elections (1973–1993), we build an NLP pipeline that:
+This project studies whether male and female candidates in French legislative elections cite political figures differently, with a focus on the **gender of cited persons**. Using a corpus of 20,331 manifestos from five elections (1973–1993), I build an NLP pipeline that:
 
 1. Extracts person citations via **CamemBERT-NER**
 2. Resolves the gender of cited figures through **Wikidata**
-3. Analyses citation patterns by candidate gender, year, and party
+3. Analyses citation patterns by candidate gender and year
 
-**Core finding:** female candidates cite women in 44% of their known-gender citations, compared to 5% for male candidates (Mann-Whitney U, p < 0.001). This gap persists across all five election years and reflects not just a quantitative difference but a qualitative one — female candidates invoke feminist intellectuals and activists absent from male manifestos.
+**Core finding:** Quantitatively, female candidates cite women in 44% of their known-gender citations, compared to 5% for male candidates (Mann-Whitney U, p < 0.001). This gap persists across all five election years and also reflects qualitative differences: female candidates invoke feminist intellectuals and activists absent from male manifestos.
 
 ---
 
@@ -45,8 +45,6 @@ NER_gender/
 │   ├── fig_temporal.png                # Female citation share over time
 │   ├── fig_temporal_figures.png        # Unique female figures cited over time
 │   ├── fig_top_female_pct.png          # Top cited female figures by candidate gender
-│   └── Report/
-│       └── neurips_2026.tex            # Paper draft (NeurIPS 2026 format)
 │
 └── setup_data.sh                       # Script to download the Archelec corpus
 ```
@@ -155,18 +153,4 @@ Notebook `05` can be run independently for NER evaluation.
 - **512-token NER limit:** CamemBERT-NER only processes the first ~350 words of most manifestos. Citations later in the text are missed.
 - **No citation context:** we detect that a name is cited but not whether the citation is approving, critical, or adversarial.
 
----
 
-## Citation
-
-```
-Reyes, A. (2026). Who Do They Cite? Gendered Citation Patterns in
-French Legislative Manifestos (1973–1993). M2 NLP Final Project,
-École Polytechnique.
-```
-
----
-
-## License
-
-Code: MIT. Data: Archelec corpus © Sciences Po / CEVIPOF. Gender data from Wikidata (CC0).
