@@ -1,9 +1,5 @@
 # Gendered Citation Patterns in French Legislative Manifestos (1973–1993)
 
-Final project for M2 Machine Learning for NLP, ENSAE
-
----
-
 ## Overview
 
 This project studies whether male and female candidates in French legislative elections cite political figures differently, with a focus on the **gender of cited persons**. Using a corpus of 20,331 manifestos from five elections (1973–1993), I build an NLP pipeline that:
@@ -151,6 +147,6 @@ Notebook `05` can be run independently for NER evaluation.
 
 - **Wikidata gender gap:** the 33.9% unknown rate likely skews female, meaning reported citation rates are conservative lower bounds.
 - **512-token NER limit:** CamemBERT-NER only processes the first ~350 words of most manifestos. Citations later in the text are missed.
-- **No citation context:** we detect that a name is cited but not whether the citation is approving, critical, or adversarial.
+- **No citation context:** I detect that a name is cited but not whether the citation is approving, critical, or adversarial.
 
 
