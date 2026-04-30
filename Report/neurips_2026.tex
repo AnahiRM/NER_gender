@@ -37,6 +37,7 @@ During this period, female candidacies in France were rare: around 10.6\% of the
 
 In this study, I leveraged the Archelec project \cite{gaultier2022}, which has digitised 21,697 \emph{professions de foi} or manifesto documents from five French legislative elections (1973--1993). This paper asks one question in face of the feminist mobilisation: \textbf{Does the gender of cited political figures depend on the gender of the candidate writing the manifesto? And if there is a gap, how big is it?}
 
+Throughout this paper, a citation refers to any named reference to a person detected in a manifesto text. This includes both approving and critical mentions. I use "citation" rather than "mention" to reflect the political discourse literature's understanding that naming a figure in a public speech act, regardless of rhetorical intent, constitutes a discursive choice about the political figures that matter in one's political argument.
 
 %────────────────────────────────────────────────────────────
 \section{Related Work}
@@ -168,10 +169,7 @@ I manually annotated a \href{https://github.com/AnahiRM/NER_gender/blob/main/dat
 
 
 \begin{table}[h]                                                         
-    \centering                                                           
-    \begin{tabular}{lr}                                                    
-    \hline                                                               
-    \textbf{Metric} & \textbf{Value} \\                                  \hline                                                               True Positives (TP)  & 132   \\                                      False Positives (FP) & 22    \\                                      False Negatives (FN) & 3     \\                                      \hline                                                               Precision            & 0.857 \\                                      Recall               & 0.978 \\                                      F1 Score             & 0.913 \\                                      \hline                                                               Precision (femme)    & 0.812 \\
+    \centering                                                           \begin{tabular}{lr}                                                    \hline                                                               \textbf{Metric} & \textbf{Value} \\                                  \hline                                                               True Positives (TP)  & 132   \\                                      False Positives (FP) & 22    \\                                      False Negatives (FN) & 3     \\                                      \hline                                                               Precision            & 0.857 \\                                      Recall               & 0.978 \\                                      F1 Score             & 0.913 \\                                      \hline                                                               Precision (femme)    & 0.812 \\
       Precision (homme)    & 0.913 \\                                    \hline                                         
     \end{tabular}  
     \caption{Gender NER evaluation results.}                             \label{tab:ner-eval}
