@@ -113,33 +113,37 @@ The gap persists across all five election years. The repertoire of unique female
 
 ---
 
-## Setup
+## How to Run
 
-### Requirements
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/AnahiRM/NER_gender.git
+cd NER_gender
+```
+
+### 2. Install dependencies
+
+Python 3.9+ required.
 
 ```bash
 pip install pandas numpy matplotlib seaborn scipy transformers tqdm requests langdetect
 ```
 
-### Data
+### 3. Run the notebooks in order
 
-The Archelec manifesto texts are not included in this repository. Run the setup script to download them:
+All data is included in the repository. Open JupyterLab or Jupyter Notebook and run in sequence:
 
-```bash
-bash setup_data.sh
-```
+| Notebook | What it does | Output |
+|---|---|---|
+| `01_data_exploration.ipynb` | Loads manifesto texts + candidate metadata, descriptive stats | `data/manifestos_with_metadata.csv` |
+| `02_ner_pipeline.ipynb` | Runs CamemBERT-NER, cleans citations | `data/citations_clean.csv` |
+| `03_gender_tagging.ipynb` | Queries Wikidata for gender of cited persons | `data/citations_with_gender.csv` |
+| `04_analysis.ipynb` | Statistical analysis and figures | `figures/` |
 
-The candidate metadata file (`archelec_metadata_full.csv`) is included in `data/`.
+Notebook `05_annotation.ipynb` can be run independently to reproduce the NER evaluation (Precision 0.857 · Recall 0.978 · F1 0.913).
 
-### Running the pipeline
-
-Run notebooks in order:
-
-```
-01 → 02 → 03 → 04
-```
-
-Notebook `05` can be run independently for NER evaluation.
+> **Note:** Notebook 03 queries the Wikidata API (~10k names, 0.3s delay between requests). It takes around 1 hour to run from scratch. A cached result is included in `data/wikidata_cache.json` and `data/citations_with_gender.csv` so you can skip directly to notebook 04 if needed.
 
 ---
 
