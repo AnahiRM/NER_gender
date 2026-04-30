@@ -25,6 +25,10 @@ NER_gender/
 │   └── 05_annotation.ipynb         # Manual NER evaluation (precision/recall)
 │
 ├── data/
+│   ├── archelec_repo/
+│   │   ├── text_files/             # Raw manifesto .txt files (21,697 files, by year)
+│   │   ├── extract_text.py         # Script used to export texts from Arkindex
+│   │   └── requirements.txt
 │   ├── archelec_metadata_full.csv  # Candidate metadata (gender, party, department)
 │   ├── manifestos_with_metadata.csv    # 20,331 manifestos joined with metadata
 │   ├── citations.csv                   # 85,827 raw NER citations
